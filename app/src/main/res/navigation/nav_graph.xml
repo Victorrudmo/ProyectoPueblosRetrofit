@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.proyecto.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_fragmentConfiguracion"
+            app:destination="@id/fragmentConfiguracion" />
+        <action
+            android:id="@+id/action_listFragment_to_blankFragment"
+            app:destination="@id/blankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.example.proyecto.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" >
+        <action
+            android:id="@+id/action_blankFragment_to_fragmentConfiguracion"
+            app:destination="@id/fragmentConfiguracion" />
+
+        <action
+            android:id="@+id/action_blankFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentConfiguracion"
+        android:name="com.example.proyecto.ConfigFragment"
+        android:label="FragmentConfiguracion" >
+        <action
+            android:id="@+id/action_fragmentConfiguracion_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_fragmentConfiguracion_to_blankFragment"
+            app:destination="@id/blankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.proyecto.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <action
+            android:id="@+id/action_detailsFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_detailsFragment_to_fragmentConfiguracion"
+            app:destination="@id/fragmentConfiguracion" />
+        <action
+            android:id="@+id/action_detailsFragment_to_blankFragment"
+            app:destination="@id/blankFragment" />
+        <argument
+            android:name="image"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="habitants"
+            app:argType="string" />
+    </fragment>
+</navigation>
